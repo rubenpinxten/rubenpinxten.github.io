@@ -8,7 +8,7 @@
     <div x-data="{
         posts: {},
         async getData() {
-            this.posts = await (await fetch('https://api-service-rubenpinxten.cloud.okteto.net//quote/first')).json();
+            this.posts = await (await fetch('https://api-service-rubenpinxten.cloud.okteto.net/quote/first')).json();
         }
     }">
         <button x-on:click="getData">Send get request</button>
