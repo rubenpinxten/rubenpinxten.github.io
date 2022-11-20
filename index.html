@@ -1,4 +1,4 @@
-<html>
+<html xmlns:x-on="http://www.w3.org/1999/xhtml">
 
 <head>
     <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
@@ -6,13 +6,13 @@
 
 <body>
     <div x-data="{
-        posts: {},
+        respons: {},
         async getData() {
-            this.posts = await (await fetch('https://api-service-rubenpinxten.cloud.okteto.net/quote/first')).json();
+            this.respons = await (await fetch('https://api-service-rubenpinxten.cloud.okteto.net/quote/first')).json();
         }
     }">
         <button x-on:click="getData">Send get request</button>
-        test: <strong x-text="posts[0].title">Placeholder</strong>
+        Data returned: <strong x-text='respons["quote"].quote'>Placeholder</strong>
 
     </div>
 </body>
